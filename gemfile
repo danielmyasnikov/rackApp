@@ -3,3 +3,4 @@ source 'https://rubygems.org'
 gem 'rack'
 gem 'slim'
 gem 'pg', require: false
+gem 'rethinkdb', require: false

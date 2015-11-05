@@ -1,0 +1,61 @@
+2015-11-05T13:52:38.296663000 0.336998s notice: Recursively removing directory /Users/danielmyasnikov/src/_lab/rackApp/rethinkdb_data/tmp
+2015-11-05T13:52:38.299151000 0.339490s notice: Initializing directory /Users/danielmyasnikov/src/_lab/rackApp/rethinkdb_data
+2015-11-05T13:52:38.299273000 0.339605s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/danielmyasnikov/src/_lab/rackApp/rethinkdb_data' did not already exist or is empty.)
+2015-11-05T13:52:38.299328000 0.339660s notice: Running rethinkdb 2.1.5-2 (CLANG 4.2 (clang-425.0.28))...
+2015-11-05T13:52:38.328664000 0.368998s notice: Running on Darwin 13.4.0 x86_64
+2015-11-05T13:52:38.328749000 0.369081s notice: Loading data from directory /Users/danielmyasnikov/src/_lab/rackApp/rethinkdb_data
+2015-11-05T13:52:39.318580000 1.359138s info: Automatically using cache size of 100 MB
+2015-11-05T13:52:39.318600000 1.359158s warn: Cache size is larger than available memory.
+2015-11-05T13:52:39.318610000 1.359168s warn: Cache size is very low and may impact performance.
+2015-11-05T13:52:39.319288000 1.359846s notice: Listening for intracluster connections on port 29015
+2015-11-05T13:52:39.362931000 1.403489s notice: Listening for client driver connections on port 28015
+2015-11-05T13:52:39.363202000 1.403760s notice: Listening for administrative HTTP connections on port 8080
+2015-11-05T13:52:39.363206000 1.403764s notice: Listening on addresses: 127.0.0.1, ::1
+2015-11-05T13:52:39.363212000 1.403770s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-11-05T13:52:39.363214000 1.403772s notice: Server ready, "Daniels_MacBook_Pro_local_ycp" c7295bd3-13b5-41f0-a676-b1e5d8235eb0
+2015-11-05T14:05:51.831305000 794.051355s info: Table 2f072b1b-cb75-41b1-af5a-42df41cbf6ea: Added replica on this server.
+2015-11-05T14:05:53.130328000 795.350604s info: Table 2f072b1b-cb75-41b1-af5a-42df41cbf6ea: Starting a new Raft election for term 1.
+2015-11-05T14:05:53.319953000 795.540228s info: Table 2f072b1b-cb75-41b1-af5a-42df41cbf6ea: This server is Raft leader for term 1. Latest log index is 0.
+2015-11-05T14:35:16.378500000 2558.998046s notice: Server got SIGINT from pid 484, uid 501; shutting down...
+2015-11-05T14:35:16.378737000 2558.998283s notice: Shutting down client connections...
+2015-11-05T14:35:16.379060000 2558.998606s notice: All client connections closed.
+2015-11-05T14:35:16.379074000 2558.998620s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-11-05T14:35:16.451393000 2559.070939s notice: Storage engine shut down.
+2015-11-05T14:35:17.547283000 0.354089s notice: Running rethinkdb 2.1.5-2 (CLANG 4.2 (clang-425.0.28))...
+2015-11-05T14:35:17.643418000 0.450221s notice: Running on Darwin 13.4.0 x86_64
+2015-11-05T14:35:17.643538000 0.450337s notice: Loading data from directory /Users/danielmyasnikov/src/_lab/rackApp/rethinkdb_data
+2015-11-05T14:35:17.933123000 0.739923s info: Automatically using cache size of 100 MB
+2015-11-05T14:35:17.933142000 0.739941s warn: Cache size does not leave much memory for server and query overhead (available memory: 151 MB).
+2015-11-05T14:35:17.933153000 0.739952s warn: Cache size is very low and may impact performance.
+2015-11-05T14:35:17.933952000 0.740752s notice: Listening for intracluster connections on port 29015
+2015-11-05T14:35:17.966146000 0.772945s notice: Listening for client driver connections on port 28015
+2015-11-05T14:35:17.966393000 0.773192s notice: Listening for administrative HTTP connections on port 8080
+2015-11-05T14:35:17.966395000 0.773193s notice: Listening on addresses: 127.0.0.1, ::1
+2015-11-05T14:35:17.966396000 0.773194s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-11-05T14:35:17.966410000 0.773209s notice: Server ready, "Daniels_MacBook_Pro_local_ycp" c7295bd3-13b5-41f0-a676-b1e5d8235eb0
+2015-11-05T14:35:19.109239000 1.916265s info: Table 2f072b1b-cb75-41b1-af5a-42df41cbf6ea: Starting a new Raft election for term 2.
+2015-11-05T14:35:19.415668000 2.222921s notice: Server got SIGINT from pid 484, uid 501; shutting down...
+2015-11-05T14:35:19.416214000 2.223467s warn: Problem when checking for new versions of RethinkDB: HTTP request to update.rethinkdb.com failed.
+2015-11-05T14:35:19.416360000 2.223612s notice: Shutting down client connections...
+2015-11-05T14:35:19.416968000 2.224221s notice: All client connections closed.
+2015-11-05T14:35:19.416977000 2.224229s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-11-05T14:35:19.563689000 2.370943s notice: Storage engine shut down.
+2015-11-05T14:35:26.161156000 0.003909s notice: Running rethinkdb 2.1.5-2 (CLANG 4.2 (clang-425.0.28))...
+2015-11-05T14:35:26.164812000 0.007563s notice: Running on Darwin 13.4.0 x86_64
+2015-11-05T14:35:26.164867000 0.007616s notice: Loading data from directory /Users/danielmyasnikov/src/_lab/rackApp/rethinkdb_data
+2015-11-05T14:35:26.590860000 0.433610s info: Automatically using cache size of 100 MB
+2015-11-05T14:35:26.590873000 0.433622s warn: Cache size does not leave much memory for server and query overhead (available memory: 150 MB).
+2015-11-05T14:35:26.590882000 0.433632s warn: Cache size is very low and may impact performance.
+2015-11-05T14:35:26.591387000 0.434136s notice: Listening for intracluster connections on port 29015
+2015-11-05T14:35:26.605791000 0.448540s notice: Listening for client driver connections on port 28015
+2015-11-05T14:35:26.606014000 0.448764s notice: Listening for administrative HTTP connections on port 8080
+2015-11-05T14:35:26.606017000 0.448766s notice: Listening on addresses: 127.0.0.1, ::1
+2015-11-05T14:35:26.606018000 0.448767s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-11-05T14:35:26.606106000 0.448855s notice: Server ready, "Daniels_MacBook_Pro_local_ycp" c7295bd3-13b5-41f0-a676-b1e5d8235eb0
+2015-11-05T14:35:27.919415000 1.762392s info: Table 2f072b1b-cb75-41b1-af5a-42df41cbf6ea: Starting a new Raft election for term 3.
+2015-11-05T14:35:28.257584000 2.100787s info: Table 2f072b1b-cb75-41b1-af5a-42df41cbf6ea: This server is Raft leader for term 3. Latest log index is 2.
+2015-11-05T18:43:35.710689000 13412.351050s notice: Server got SIGINT from pid 484, uid 501; shutting down...
+2015-11-05T18:43:35.711383000 13412.351743s notice: Shutting down client connections...
+2015-11-05T18:43:35.711790000 13412.352150s notice: All client connections closed.
+2015-11-05T18:43:35.711797000 13412.352156s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-11-05T18:43:35.718521000 13412.358881s notice: Storage engine shut down.

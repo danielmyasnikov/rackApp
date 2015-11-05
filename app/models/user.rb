@@ -9,6 +9,7 @@ class User
 
   def connection
     # FileConnection
-    PostgresConnection
+    # PostgresConnection
+    RethinkDBConnection
   end
 end
