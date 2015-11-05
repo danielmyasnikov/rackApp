@@ -8,6 +8,7 @@ class User
   end
 
   def connection
-    FileConnection
+    # FileConnection
+    PostgresConnection
   end
 end
