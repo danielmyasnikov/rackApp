@@ -1,8 +1,14 @@
 class RackApp
-  def call(env)
-    log(env)
+  def self.call(env)
+    new(env).response.finish
+  end
 
+  def initialize(env)
     @request = Rack::Request.new(env)
+  end
+
+  def response
+    p %x(grunt)
     @user = User.new
     case
     when @request.path == '/greeting' && @request.post?
@@ -11,9 +17,9 @@ class RackApp
         resp.redirect('/')
       end
     when @request.path == '/greeting' && @request.get?
-      Rack::Response.new(slim("app/views#{@request.path}"))
+      Rack::Response.new(render_html("public/templates#{@request.path}"))
     else
-      Rack::Response.new(slim)
+      Rack::Response.new(render_html)
     end
   end
 
@@ -21,8 +27,12 @@ class RackApp
     @user.greeting
   end
 
-  def slim(template = 'app/views/index', options = {}, &block)
-    Slim::Template.new("#{template}.slim", options).render(self, &block)
+  def render_html(template = 'public/views/index')
+    File.read("#{template}.html")
+  end
+
+  def render_asset(asset)
+    File.read(asset)
   end
 
   def log(env)

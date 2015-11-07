@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(rel="stylesheet" type="text/css" href="/stylesheets/app.min.css")
+  body
+    h1 Jade - node template engine
+    div
+      a(href='/greeting') Please change greeting
+    #container.col
+      if youAreUsingJade
+        p You are amazing
+      else
+        p Get on it!
+      p.
+        Jade is a terse and simple
+        templating language with a
+        strong focus on performance
+        and powerful features.
+    script(src="/javascripts/app.min.js")

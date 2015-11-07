@@ -1,0 +1,20 @@
+{
+  "name": "rackapp",
+  "version": "1.0.0",
+  "description": "simple rack application with grunt modules and postgresql database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-coffee": "~0.4.0",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-jade": "0.15.0",
+    "grunt-contrib-uglify": "^0.10.0",
+    "grunt-sass": "1.1.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
