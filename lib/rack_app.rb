@@ -5,7 +5,7 @@ class RackApp
 
   def not_found
     Rack::Response.new do |resp|
-      resp.header['Content-Type'] = 'application/json'
+      resp.header['Content-Type'] = 'text/plain'
       resp.status = 404
       resp.body = [{ 
         message: "[#{req_type}] for [#{req_path}] do not exist"
