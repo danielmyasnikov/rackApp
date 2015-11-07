@@ -1,11 +1,16 @@
 (function() {
+  var myApp;
 
-  alert('from vendor: HELLO WORLD');
+  myApp = angular.module('rackApp', [ngResource]);
 
-}).call(this);
+  myApp.factory('User', function($resource) {
+    return $resource('/api/users/:id', {
+      id: '@id'
+    });
+  });
 
-(function() {
-
-
+  myApp.controller('UsersController', function($scope, User) {
+    return $scope.users = User.query();
+  });
 
 }).call(this);

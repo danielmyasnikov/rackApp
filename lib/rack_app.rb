@@ -3,21 +3,43 @@ class RackApp
     new(env).response.finish
   end
 
+  def not_found
+    Rack::Response.new do |resp|
+      resp.header['Content-Type'] = 'application/json'
+      resp.status = 404
+      resp.body = [{ 
+        message: "[#{req_type}] for [#{req_path}] do not exist"
+      }.to_json]
+    end
+  end
+
+  def req_type
+    @request.request_method
+  end
+
+  def req_path
+    @request.path
+  end
+
   def initialize(env)
     @request = Rack::Request.new(env)
   end
 
   def response
     p %x(grunt)
-    @user = User.new
+
     case
-    when @request.path == '/greeting' && @request.post?
-      Rack::Response.new do |resp|
-        @user.greeting = @request.params['phrase']
-        resp.redirect('/')
+    when @request.path.match(/\/api/)
+      require 'json'
+
+      case @request.path
+      when /^\/api\/users\/?$/
+        User.all
+      when /\/api\/users\/(\d{1,}$)/
+        User.find($1)
+      else
+        not_found
       end
-    when @request.path == '/greeting' && @request.get?
-      Rack::Response.new(render_html("public/templates#{@request.path}"))
     else
       Rack::Response.new(render_html)
     end
@@ -27,12 +49,8 @@ class RackApp
     @user.greeting
   end
 
-  def render_html(template = 'public/views/index')
-    File.read("#{template}.html")
-  end
-
-  def render_asset(asset)
-    File.read(asset)
+  def render_html(template = 'index')
+    File.read("public/views/#{template}.html")
   end
 
   def log(env)
