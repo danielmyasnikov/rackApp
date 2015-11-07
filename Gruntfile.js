@@ -41,13 +41,13 @@ module.exports = function(grunt) {
         }
       }
     },
-    uglify: {
-      my_target: {
-        files: {
-          'public/assets/javascripts/app.min.js': ['public/assets/javascripts/app.js']
-        }
-      }
-    },
+    // uglify: {
+    //   my_target: {
+    //     files: {
+    //       'public/assets/javascripts/app.min.js': ['public/assets/javascripts/app.js']
+    //     }
+    //   }
+    // },
     cssmin: {
       options: {
         shorthandCompacting: false,
@@ -67,6 +67,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.registerTask('default', ['concat', 'sass', 'jade', 'coffee', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['concat', 'sass', 'jade', 'coffee', 'cssmin']);
 
 }

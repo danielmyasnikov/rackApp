@@ -3,22 +3,28 @@
   <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.min.css">
-  </head>
-  <body ng-app="rackApp" ng-controller="UsersController">
-    <h1>Users</h1>
-    <table>
-      <tr>
-        <th>id</th>
-        <th>user name</th>
-        <th>registered</th>
-      </tr>
-      <tr ng-repeat="user in users">
-        <td>{{ user.id }}</td>
-        <td>{{ user.username }}</td>
-        <td>{{ user.registered }}</td>
-      </tr>
-    </table>
     <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="/javascripts/app.min.js"></script>
+    <script src="/javascripts/app.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+  </head>
+  <body ng-app="rackApp">
+    <h1>Users</h1>
+    <div ng-controller="MembersController">
+      <ul>
+        <li>id username registered actions</li>
+        <li ng-repeat="member in members">{{ member.id }} {{ member.username }} {{ member.registered }}<a ng-click="editing=true" href="#">Edit |</a><a ng-click="delete(member)" href="#">Delete</a>
+          <form ng-submit="update(member)" ng-show="editing">
+            <input ng-model="member.username">
+            <input ng-model="member.registered" type="checkbox">
+            <input type="submit">
+          </form>
+        </li>
+      </ul>
+      <form ng-submit="create()">
+        <input ng-model="member.username">
+        <input ng-model="member.registered" type="checkbox">
+        <input type="submit">
+      </form>
+    </div>
   </body>
 </html>

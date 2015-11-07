@@ -3,18 +3,23 @@ html(lang="en")
   head
     title= pageTitle
     link(rel="stylesheet" type="text/css" href="/stylesheets/app.min.css")
-
-  body(ng-app="rackApp" ng-controller="UsersController")
-    h1 Users
-    table
-      tr
-        th id
-        th user name
-        th registered
-      tr(ng-repeat="user in users")
-        td {{ user.id }}
-        td {{ user.username }}
-        td {{ user.registered }}
-
     script(src="/bower_components/angular/angular.min.js")
-    script(src="/javascripts/app.min.js")
+    script(src="/javascripts/app.js")
+    script(src="/bower_components/angular-resource/angular-resource.min.js")
+
+  body(ng-app="rackApp")
+    h1 Users
+    div(ng-controller="MembersController")
+      ul
+        li id username registered actions
+        li(ng-repeat="member in members") {{ member.id }} {{ member.username }} {{ member.registered }}
+          a(ng-click="editing=true" href="#") Edit |
+          a(ng-click="delete(member)" href="#") Delete
+          form(ng-submit="update(member)" ng-show="editing")
+            input(ng-model="member.username")
+            input(ng-model="member.registered" type="checkbox")
+            input(type="submit")
+      form(ng-submit="create()")
+        input(ng-model="member.username")
+        input(ng-model="member.registered" type="checkbox")
+        input(type="submit")

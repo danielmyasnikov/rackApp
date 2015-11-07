@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rack', '< 1.6'
+gem 'rack'
 gem 'pg', require: false
 gem 'rethinkdb', require: false
-# gem 'grape'#, path: '../../_lib/grape'
-# gem 'sinatra'#, path: '../../_lib/sinatra'
