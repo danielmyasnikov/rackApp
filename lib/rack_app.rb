@@ -46,7 +46,7 @@ class RackApp
   end
 
   def response
-    p %x(grunt) if ENV['RACK_ENV'] == 'development'
+    # p %x(grunt) if ENV['RACK_ENV'] == 'development'
 
     case
     when @request.path.match(/\/api/)
@@ -58,7 +58,6 @@ class RackApp
           render_json Member.all
         else
           member = Member.create(params)
-          p member
           render_json(member)
         end
       when /\/api\/members\/(\d{1,}$)/
@@ -69,11 +68,9 @@ class RackApp
         case req_type
         when 'DELETE'
           member = Member.delete($1)
-          p member
           render_json(member)
         when 'PUT'
           member = Member.update(params.delete('id'), params)
-          p member
           render_json(member)
         else
           render_json :member => member
